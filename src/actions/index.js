@@ -1,0 +1,1 @@
+export const swapPairs = () => ({ type: 'SWAP_PAIRS' })
