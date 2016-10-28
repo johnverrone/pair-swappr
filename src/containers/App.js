@@ -20,7 +20,7 @@ const style = {
   }
 }
 
-const App = ({pairs, swapPairs}) => (
+const App = ({developers, pairs, swapPairs}) => (
   <div className="App">
     <AppBar
       title="Pair Swappr"
@@ -30,7 +30,7 @@ const App = ({pairs, swapPairs}) => (
     <div className="container">
       <div className="flex-container">
         <div className="people-list">
-          <PeopleList />
+          <PeopleList developers={developers} />
         </div>
         <div className="pairstation-list">
           <PairStationList 
@@ -47,11 +47,13 @@ const App = ({pairs, swapPairs}) => (
 )
 
 App.propTypes = {
+  developers: PropTypes.array.isRequired,
   pairs: PropTypes.object.isRequired,
   swapPairs: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
+  developers: state.developers,
   pairs: state.pairs
 })
 
